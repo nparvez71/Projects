@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<h:form id="form1" style="">
+		 <p:growl id="messages" showSummary="true" /> 
+			<p:panel id="panel">
+				<br />
+			<h:panelGrid id="display" columns="1" cellpadding="4">
+			
+				<p:outputPanel layout="block" style="text-align:center">
+					<h:outputText value="Subject Name" for="subjectName"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="subjectName" value="#{subjectMB.bean.subjectName}"
+					 label="Subject"/>
+					 
+				</p:outputPanel>
+				<p:outputPanel layout="block" style="text-align:center">	 
+					<h:outputText value="Predefined ID" for="preDefineID"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="preDefineID" value="#{subjectMB.bean.preDefineID}"
+					 label="Predefined ID"/>
+				</p:outputPanel>
+				<p:outputPanel layout="block" style="text-align:center">	 
+					<h:outputText value="Subject Note" for="subjectNote"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="subjectNote" value="#{subjectMB.bean.subjectNote}"
+					 label="Note"/>
+				</p:outputPanel>
+				 
+				<p:outputPanel layout="block" style="text-align:center">
+					
+					<p:commandButton value="Reset" styleClass="" update=":form1:panel"
+						process="@this" actionListener="#{subjectMB.reset}" />
+						
+					<p:commandButton value="Save" styleClass=""
+						actionListener="#{subjectMB.insert}" type="submit"
+						update=":form1:messages, :form1:panel :form1" />
+				</p:outputPanel>
+			</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>

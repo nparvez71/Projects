@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+	
+	<!-- SHABIB HASAN This is the View page Global Shift Page -->
+	
+	<ui:define name="content">
+		<h:form id="form1" style="">
+		 <p:growl id="messages" showSummary="true" /> 
+			<p:panel id="panel">
+				<br />
+			<h:panelGrid id="display" columns="2" cellpadding="4">
+					<h:outputText value="Shift Name" for="shiftName"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="shiftName" value="#{globalShiftMB.bean.shiftName}"
+					 label="ShiftName"/>
+					 
+					 <h:outputText value="PreDefine ID" for="preDefineID"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="preDefineID" value="#{globalShiftMB.bean.preDefineID}"
+					 label="PreDefineID"/>
+					 
+					 <h:outputText value="Shift Note" for="shiftNote"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="shiftNote" value="#{globalShiftMB.bean.shiftNote}"
+					 label="ShiftNote"/>
+					 
+					 
+					<p:outputPanel layout="block" style="text-align:center">
+						<br />
+						<br />
+						<p:commandButton value="Reset" styleClass="" update=":form1:panel"
+							process="@this" actionListener="#{globalShiftMB.reset}" />
+						<p:commandButton value="Save" styleClass=""
+							actionListener="#{globalShiftMB.insert}" type="submit"
+							update=":form1:messages, :form1:panel :form1" />
+					</p:outputPanel>
+			</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>

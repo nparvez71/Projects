@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<h:form id="form1" style="">
+		 <p:growl id="messages" showSummary="true" /> 
+			<p:panel id="panel">
+				<br />
+			<h:panelGrid id="display" columns="2" cellpadding="4">
+					<h:outputText value="predefineGroupID" for="predefineGroupID"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="predefineGroupID" value="#{globalGroupMB.bean.predefineGroupID}"
+					 label="predefineGroupID"/>
+					 
+					
+					 
+					 
+					 <h:outputText value="Group Name" for="groupName"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="groupName" value="#{globalGroupMB.bean.groupName}"
+					 label="Group Name"/>
+					 
+					 
+					 
+					  <h:outputText value="Group Note" for="groupNote"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="groupNote" value="#{globalGroupMB.bean.groupNote}"
+					 label="Group Note"/>
+					 
+					<p:outputPanel layout="block" style="text-align:center">
+						<br />
+						<br />
+						<p:commandButton value="Reset" styleClass="" update=":form1:panel"
+							process="@this" actionListener="#{globalGroupMB.reset}" />
+						<p:commandButton value="Save" styleClass=""
+							actionListener="#{globalGroupMB.insert}" type="submit"
+							update=":form1:messages, :form1:panel :form1" />
+					</p:outputPanel>
+			</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>

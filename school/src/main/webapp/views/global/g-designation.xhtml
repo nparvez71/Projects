@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<h:form id="form1" style="">
+		 <p:growl id="messages" showSummary="true" /> 
+			<p:panel id="panel">
+				<br />
+			<h:panelGrid id="display" columns="1" cellpadding="4">
+				
+					<h:outputText value="Designation Name" for="designationName"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="designationName" value="#{designationMB.bean.designationName}"
+					 label="Designation Name"/>
+			
+				
+				
+					<h:outputText value="Predefined ID" for="preDefineID"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="preDefineID" value="#{designationMB.bean.preDefineID}"
+					 label="Predefined ID"/>
+				
+				
+			
+					<h:outputText value="Designation Note" for="designationNote"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="designationNote" value="#{designationMB.bean.designationNote}"
+					 label="Note"/>
+				
+
+				<p:outputPanel layout="block" style="text-align:left"> 
+					<p:commandButton value="Reset" styleClass="" update=":form1:panel"
+						process="@this" actionListener="#{designationMB.reset}" />
+					<p:commandButton value="Save" styleClass=""
+						actionListener="#{designationMB.insert}" type="submit"
+						update=":form1:messages, :form1:panel :form1" />
+				</p:outputPanel>
+			</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,104 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pv="http://primefaces.org/volt">
+
+	<h:form id="menuform">
+		<pv:menu>
+		<p:submenu label="Users Registration" icon="icon-leaf">
+
+				<p:menuitem value="Add New Role" icon="icon-leaf"
+					outcome="/views/users/role" />
+				<p:menuitem value="All Roles" icon="icon-leaf"
+					outcome="/views/users/role-all" />
+				<p:menuitem value="Add New User" icon="icon-leaf"
+					outcome="/views/users/user" />
+				<p:menuitem value="All Users" icon="icon-leaf"
+					outcome="/views/users/user-all" />
+
+			</p:submenu>
+			<p:submenu label="Global Settings" icon="icon-leaf">
+				<p:submenu label="Class" icon="icon-leaf">
+					<p:menuitem value="Add New Class" icon="icon-leaf"
+						outcome="/views/global/g-class" />
+					<p:menuitem value="All Classes" icon="icon-leaf"
+						outcome="/views/global/g-class-all" />
+
+				</p:submenu>
+				
+				<p:submenu label="Section" icon="icon-leaf">
+					<p:menuitem value="Add New Section" icon="icon-leaf"
+						outcome="/views/global/g-section" />
+					<p:menuitem value="All Sections" icon="icon-leaf"
+						outcome="/views/global/g-section-all" />
+				</p:submenu>
+				<p:submenu label="Shift" icon="icon-leaf">
+					<p:menuitem value="Add New Shift" icon="icon-leaf"
+						outcome="/views/global/g-shift" />
+					<p:menuitem value="All Shifts" icon="icon-leaf"
+						outcome="/views/global/g-shift-all" />
+				</p:submenu>
+				
+				<p:submenu label="Subject" icon="icon-leaf">
+					<p:menuitem value="Add New Subject" icon="icon-leaf"
+						outcome="/views/global/g-subject" />
+					<p:menuitem value="All Subjects" icon="icon-leaf"
+						outcome="/views/global/g-subject-all" />
+				</p:submenu>
+				
+				<p:submenu label="Group" icon="icon-leaf">
+					<p:menuitem value="Add New Group" icon="icon-leaf"
+						outcome="/views/global/g-group" />
+					<p:menuitem value="All Groups" icon="icon-leaf"
+						outcome="/views/global/g-group-all" />
+				</p:submenu>
+				
+				<p:submenu label="Period" icon="icon-leaf">
+					<p:menuitem value="Add New Period" icon="icon-leaf"
+						outcome="/views/global/g-period" />
+					<p:menuitem value="All Periods" icon="icon-leaf"
+						outcome="/views/global/g-period-all" />
+				</p:submenu>
+				
+				<p:submenu label="Designation" icon="icon-leaf">
+					<p:menuitem value="Add New Designation" icon="icon-leaf"
+						outcome="/views/global/g-designation" />
+					<p:menuitem value="All Designations" icon="icon-leaf"
+						outcome="/views/global/g-designation-all" />
+				</p:submenu>
+				
+				<p:submenu label="Marksheet Template" icon="icon-leaf">
+					<p:menuitem value="Add New Marksheet Template" icon="icon-leaf"
+						outcome="/views/global/g-msheet-tem" />
+					<p:menuitem value="All Marksheet Templates" icon="icon-leaf"
+						outcome="/views/global/g-msheet-tem-all" />
+				</p:submenu>
+				
+				<p:submenu label="Core Setting Template" icon="icon-leaf">
+					
+					<p:menuitem value="All Core Setting" icon="icon-leaf"
+						outcome="/views/global/core-settng-group-all" />
+				</p:submenu>
+				
+				
+								
+			</p:submenu>
+			
+
+
+			<p:submenu label="Core Settings" icon="icon-leaf">
+
+				<p:menuitem value="Test......." icon="icon-leaf"
+					outcome="/views/cs/test" />
+					
+				<p:menuitem value="Add core setting group......." icon="icon-leaf"
+					outcome="/views/cs/Add-core-setting-group" />
+
+			</p:submenu>
+
+		</pv:menu>
+	</h:form>
+
+</ui:composition>

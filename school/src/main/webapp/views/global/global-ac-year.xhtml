@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<h:form id="form1" style="">
+			<p:growl id="messages" showSummary="true" />
+			<p:panel id="panel">
+				<br />
+				<h:panelGrid id="display" columns="2" cellpadding="4">
+
+					<h:outputText value="Acdemic Year" for="academicYear"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:inputText id="academicYear"
+						value="#{globalAcademicYearMB.bean.academicYear}" label="Ac Year" />
+
+
+					<h:outputText value="Acdemic Year startime" for="startTime"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:calendar id="startTime"
+						value="#{globalAcademicYearMB.bean.startTime}"
+						pattern="MM/dd/yyyy" showOn="button"/>
+
+
+					<h:outputText value="Acdemic Year endTime" for="endTime"
+						style="padding-left: 30px; padding-right: 30px;" />
+					<p:calendar id="endTime"
+						value="#{globalAcademicYearMB.bean.endTime}" pattern="MM/dd/yyyy" showOn="button"/>
+						
+						
+						
+
+					<p:outputPanel layout="block" style="text-align:center">
+						<br />
+						<br />
+						<p:commandButton value="Reset" styleClass="" update=":form1:panel"
+							process="@this" actionListener="#{globalAcademicYearMB.reset}" />
+						<p:commandButton value="Save" styleClass=""
+							actionListener="#{globalAcademicYearMB.insert}" type="submit"
+							update=":form1:messages, :form1:panel :form1" />
+					</p:outputPanel>
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
